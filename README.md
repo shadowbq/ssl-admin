@@ -1,7 +1,7 @@
 ssl-admin
 =========
 
-Fork: https://www.secure-computing.net/trac/browser/SCN Open Source/trunk/ssl-admin/perl/ 
+Fork: https://www.secure-computing.net/trac/browser/SCN%20Open%20Source/trunk/ssl-admin/perl/
 
 ssl-admin was designed to create a user-friendly, menu-driven interface
 to the OpenSSL programs.
