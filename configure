@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# $Id$
+
+OS=`uname`
+case "$OS" in
+        FreeBSD)
+        sed -i "" "s+VARETC+/usr/local/etc+g" Makefile
+        sed -i "" "s+VARBIN+/usr/local/bin+g" Makefile
+        sed -i "" "s+VARMAN+/usr/local/man+g" Makefile
+        sed -i "" "s+SEDCMD+sed -i \"\"+g" Makefile
+        ;;
+        NetBSD)
+        sed -i "" "s+VARETC+/usr/local/etc+g" Makefile
+        sed -i "" "s+VARBIN+/usr/local/bin+g" Makefile
+        sed -i "" "s+VARMAN+/usr/share/man+g" Makefile
+        sed -i "" "s+SEDCMD+sed -i \"\"+g" Makefile
+        ;;
+        OpenBSD)
+        sed -i "" "s+VARETC+/etc+g" Makefile
+        sed -i "" "s+VARBIN+/usr/local/bin+g" Makefile
+        sed -i "" "s+VARMAN+/usr/local/man+g" Makefile
+        sed -i "" "s+SEDCMD+sed -i \"\"+g" Makefile
+        ;;
+        Darwin)
+        sed -i "" "s+VARETC+/Library+g" Makefile
+        sed -i "" "s+VARBIN+/usr/local/bin+g" Makefile
+        sed -i "" "s+VARMAN+/usr/share/man+g" Makefile
+        sed -i "" "s+SEDCMD+sed -i \"\"+g" Makefile
+        ;;
+        Linux)
+        sed -i "s+VARETC+/etc+g" Makefile
+        sed -i "s+VARBIN+/usr/bin+g" Makefile
+        sed -i "s+VARMAN+/usr/share/man+g" Makefile
+        sed -i "s+SEDCMD+sed -i+g" Makefile
+        sed -i "s+wheel+root+" Makefile
+		;;
+        *)
+        echo "Your OS is not OS X (Darwin), BSD, or Linux."
+        echo "I don't know how to install on ${OS}."
+        echo "Please submit a bug report if you think I should."
+        ;;
+esac
+
